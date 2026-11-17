@@ -1,0 +1,546 @@
+
+/* =========================================
+   THE IVORY ATELIER
+   ROYAL PINK FAIRYTALE EDITION
+========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+/* RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #713C53;
+
+    background:
+        radial-gradient(circle at top, #FFFDF9, transparent 55%),
+        linear-gradient(135deg, #FFF9F0, #F9E5ED, #FCEEF2);
+
+    overflow-x: hidden;
+}
+
+/* =========================================
+   ROYAL HEADER
+========================================= */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 25px 9%;
+
+    background: rgba(255, 249, 240, 0.93);
+    backdrop-filter: blur(15px);
+
+    border-bottom: 2px solid #D6B56D;
+
+    box-shadow:
+        0 5px 25px rgba(153, 82, 112, 0.12),
+        inset 0 -3px 0 rgba(214, 181, 109, 0.15);
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    font-weight: 600;
+    color: #A64F77;
+    letter-spacing: 2px;
+
+    text-shadow: 2px 2px 8px rgba(214, 181, 109, 0.3);
+}
+
+nav {
+    display: flex;
+    gap: 35px;
+}
+
+nav a {
+    position: relative;
+    text-decoration: none;
+    color: #713C53;
+
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1px;
+
+    transition: 0.4s ease;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 2px;
+
+    background: #D6B56D;
+    transition: 0.4s ease;
+}
+
+nav a:hover {
+    color: #C46A91;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* =========================================
+   ROYAL HERO SECTION
+========================================= */
+
+#home {
+    min-height: 90vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    padding: 100px 20px;
+
+    position: relative;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            rgba(70, 31, 52, 0.35),
+            rgba(70, 31, 52, 0.5)
+        ),
+        url("https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5")
+        center/cover no-repeat;
+
+    border-bottom: 5px double #D6B56D;
+}
+
+#home::before {
+    content: "✧  ❀  ✧";
+    position: absolute;
+    top: 50px;
+
+    color: #F5DDA4;
+    font-size: 35px;
+    letter-spacing: 15px;
+
+    animation: royalFloat 4s ease-in-out infinite;
+}
+
+#home h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(45px, 7vw, 85px);
+    font-weight: 600;
+
+    color: #FFF9F0;
+    letter-spacing: 3px;
+
+    text-shadow: 0 3px 15px rgba(0, 0, 0, 0.4);
+
+    animation: royalAppear 1.5s ease;
+}
+
+#home p {
+    margin-top: 20px;
+
+    font-family: 'Playfair Display', serif;
+    font-size: 21px;
+
+    color: #F8DFAE;
+    letter-spacing: 5px;
+
+    animation: royalAppear 2s ease;
+}
+
+/* =========================================
+   GALLERY SECTION
+========================================= */
+
+#gallery {
+    padding: 90px 5%;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            180deg,
+            #FFF9F0,
+            #FBEAF0,
+            #FFF9F0
+        );
+}
+
+#gallery h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 58px;
+
+    color: #A64F77;
+    margin-bottom: 65px;
+
+    text-shadow: 2px 3px 10px rgba(214, 181, 109, 0.25);
+}
+
+#gallery h2::after {
+    content: "❦";
+    display: block;
+
+    color: #D6B56D;
+    font-size: 35px;
+    margin-top: 10px;
+}
+
+#gallery h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 34px;
+    font-weight: 500;
+
+    color: #A64F77;
+
+    margin: 55px auto 30px;
+    padding-bottom: 12px;
+
+    border-bottom: 1px solid #D6B56D;
+
+    display: block;
+    width: fit-content;
+    min-width: 220px;
+}
+
+/* =========================================
+   HORIZONTAL ART GALLERY
+========================================= */
+
+.art-gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    justify-content: center;
+    align-items: stretch;
+
+    gap: 15px;
+
+    overflow-x: auto;
+    padding: 15px 5px 25px;
+
+    margin: 0 auto 45px;
+}
+
+/* ARTWORK CARD */
+
+.art-card {
+    flex: 0 0 165px;
+    min-width: 165px;
+
+    background: #FFFDF8;
+
+    padding: 8px;
+
+    border: 2px solid #D6B56D;
+    border-radius: 7px;
+
+    box-shadow:
+        0 5px 15px rgba(110, 56, 78, 0.10),
+        inset 0 0 0 2px #F9E5ED;
+
+    transition: all 0.4s ease;
+
+    animation: artworkAppear 1s ease both;
+}
+
+.art-card:hover {
+    transform: translateY(-10px) scale(1.03);
+
+    box-shadow:
+        0 12px 25px rgba(166, 79, 119, 0.18),
+        0 10px 20px rgba(214, 181, 109, 0.2);
+}
+
+/* ARTWORK IMAGE */
+
+.art-card img {
+    display: block;
+
+    width: 100%;
+    height: 160px;
+
+    object-fit: cover;
+
+    margin: 0;
+    padding: 4px;
+
+    background: #FFF9F0;
+
+    border: 1px solid #D6B56D;
+    border-radius: 4px;
+}
+
+/* ARTWORK DESCRIPTION */
+
+.art-card p {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    line-height: 1.5;
+
+    color: #713C53;
+
+    margin-top: 10px;
+    padding: 5px 2px;
+
+    text-align: center;
+}
+
+.art-card p::before {
+    content: "✧ ";
+    color: #D6B56D;
+}
+
+.art-card p::after {
+    content: " ✧";
+    color: #D6B56D;
+}
+
+/* SCROLLBAR */
+
+.art-gallery::-webkit-scrollbar {
+    height: 7px;
+}
+
+.art-gallery::-webkit-scrollbar-thumb {
+    background: #D6B56D;
+    border-radius: 20px;
+}
+
+.art-gallery::-webkit-scrollbar-track {
+    background: #F9E5ED;
+    border-radius: 20px;
+}
+
+/* =========================================
+   ABOUT SECTION
+========================================= */
+
+#about {
+    padding: 100px 15%;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #F5DCE6,
+            #FFF9F0,
+            #F5DCE6
+        );
+
+    border-top: 3px double #D6B56D;
+    border-bottom: 3px double #D6B56D;
+}
+
+#about h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 55px;
+
+    color: #A64F77;
+    margin-bottom: 30px;
+}
+
+#about h2::before {
+    content: "✧ ";
+    color: #D6B56D;
+}
+
+#about h2::after {
+    content: " ✧";
+    color: #D6B56D;
+}
+
+#about p {
+    max-width: 750px;
+    margin: auto;
+
+    font-size: 15px;
+    line-height: 2.3;
+
+    color: #713C53;
+    letter-spacing: 0.5px;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    padding: 30px;
+
+    text-align: center;
+
+    background: #713C53;
+
+    border-top: 4px solid #D6B56D;
+}
+
+footer p {
+    font-family: 'Playfair Display', serif;
+
+    color: #F8DFAE;
+
+    font-size: 16px;
+    letter-spacing: 2px;
+}
+
+/* =========================================
+   ROYAL ANIMATIONS
+========================================= */
+
+@keyframes royalAppear {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes artworkAppear {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes royalFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 25px;
+    }
+
+    nav {
+        gap: 20px;
+    }
+
+    #home {
+        min-height: 70vh;
+    }
+
+    #home h2 {
+        font-size: 43px;
+    }
+
+    #home p {
+        font-size: 15px;
+        letter-spacing: 3px;
+    }
+
+    #gallery {
+        padding: 70px 5%;
+    }
+
+    #gallery h2 {
+        font-size: 43px;
+    }
+
+    #gallery h3 {
+        font-size: 28px;
+    }
+
+    .art-gallery {
+        justify-content: flex-start;
+    }
+
+    .art-card {
+        flex: 0 0 155px;
+        min-width: 155px;
+    }
+
+    .art-card img {
+        height: 150px;
+    }
+
+    #about {
+        padding: 70px 8%;
+    }
+
+    #about h2 {
+        font-size: 43px;
+    }
+}
+
+/* MEDIUM ROYAL ARTWORK SIZE */
+
+#gallery img {
+    width: 180px !important;
+    height: 190px !important;
+
+    object-fit: cover;
+
+    margin: 8px !important;
+    padding: 6px;
+
+    border: 2px solid #D6B56D;
+    border-radius: 5px;
+}
+
+/* ART CARD */
+
+.art-card {
+    flex: 0 0 195px !important;
+    min-width: 195px !important;
+
+    padding: 8px;
+}
+
+.art-card img {
+    width: 100% !important;
+    height: 160px !important;
+
+    margin: 0 !important;
+}
+
+.art-card p {
+    font-size: 13px;
+}
